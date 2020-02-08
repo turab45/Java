@@ -1,0 +1,28 @@
+class ClothMarket{
+
+String clothMarketName;
+String location;
+
+public void isOpen(boolean a){
+  if(a==true){
+    System.out.println("The Market is open");
+    }
+   else{
+   System.out.println("The Market is closed");
+   }
+}
+
+
+
+public static void main(String args[]){
+ClothMarket cm=new ClothMarket();
+cm.clothMArketName="Cloth Market";
+cm.location = "San Francisco, USA";
+
+System.out.println("Name of Cloth Market : "+cm.clothMarketName);
+System.out.println("Location : "+cm.location);
+
+cm.isOpen();
+
+}
+}

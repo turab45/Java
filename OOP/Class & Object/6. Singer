@@ -1,0 +1,29 @@
+class Singer{
+
+String name;
+String type;
+String location;
+
+public void singing(){
+System.out.println("The Singer is Singing right now");
+}
+
+public void doingPractice(){
+System.out.println("The Singer is practicing the song");
+}
+
+public static void main(String args[]){
+Singer s=new Singer();
+s.name="Annie Marie";
+s.type = "Pop star";
+s.location = "San Francisco, USA";
+
+System.out.println("Name : "+s.name);
+System.out.println("Type : "+s.type);
+System.out.println("Location : "+s.location);
+
+s.singing();
+s.doingPractice();
+
+}
+}

@@ -1,0 +1,31 @@
+class Scientist{
+
+int age;
+String name;
+String type;
+
+public void thinking(){
+System.out.println("Scientist is thinking ");
+}
+
+public void doingExperiment(){
+System.out.println("Scientist is doing an experiment");
+}
+
+
+public static void main(String args[]){
+Scientist s=new Scientist();
+
+s.age=35;
+s.name="Turab";
+s.type="Data Scientist";
+
+System.out.println("Name : "+s.name);
+System.out.println("Age : "+s.age);
+System.out.println("Type : "+s.type);
+
+s.thinking();
+s.doingExperiment();
+
+}
+}

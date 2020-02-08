@@ -1,0 +1,37 @@
+class Animal{
+
+String color;
+String name;
+String family;
+
+public void isFine(boolean a){
+  if(a==true){
+  System.out.println("Animal is Fine");
+  }
+  else{
+  System.out.println("Animal is not fine");
+  }
+  
+  public void eat(){
+  System.out.println("Animal is eating");
+  }
+
+ public static void main(String args[]){
+ Animal dog = new Animal();
+ 
+ dog.name="Puppy";
+ dog.color="Brown";
+ dog.family = "Bull dog family";
+ 
+ dog.isFine(true);
+ dog.eat();
+ 
+ System.out.println("Name : "+dog.name);
+  System.out.println("Color : "+dog.color);
+   System.out.println("Family : "+dog.family);
+ } 
+}
+
+
+
+}

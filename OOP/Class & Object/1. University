@@ -1,1 +1,29 @@
+class University{
+int universityCertificateNo;
+String name;
+int ranking;
 
+public String status(boolean a){
+  if(a==true){
+  return "University is on";
+  }
+  else{
+  return "University is closed";
+  }
+}
+
+public static void main(String args[]){
+University mehran = new University();
+
+mehran.name = "MUET Jamshoro";
+mehran.universityCertificateNo = 9000 ;
+mehran.ranking = 15;
+
+System.out.println("University Name : "+mehran.name);
+System.out.println("University Certificate No : "+mehran.universityCertificateNo);
+System.out.println("University Ranking : "+mehran.ranking);
+System.out.println(mehran.status());
+
+}
+
+}

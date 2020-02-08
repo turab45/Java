@@ -1,0 +1,29 @@
+class Artist{
+
+String name;
+String type;
+
+
+public void doingWork(){
+System.out.println("The Artist is doing his work right now");
+}
+
+public void Sleeping(){
+System.out.println("The Artist is sleeping right now");
+}
+
+public static void main(String args[]){
+Artist a=new Artist();
+a.name="Albert Mycho";
+a.type = "Painter";
+
+
+System.out.println("Name : "+a.name);
+System.out.println("Type : "+a.type);
+
+
+a.doingWork();
+a.sleeping();
+
+}
+}

@@ -1,0 +1,30 @@
+class Human{
+
+int height;
+String religion;
+String language;
+
+public void canWalk(){
+      System.out.println("Human can walk");
+}
+public void canSleep(){
+System.out.println("Human can sleep");
+}
+
+public static void main(String args[]){
+Human h=new Human();
+
+h.height=6;
+h.religion="Islam";
+h.language="Sindhi/Urdu";
+
+h.canWalk();
+h.canSleep();
+
+System.out.println("Name : "+h.name);
+System.out.println("Religion : "+h.religion);
+System.out.println("Height : "+h.height);
+
+}
+
+}

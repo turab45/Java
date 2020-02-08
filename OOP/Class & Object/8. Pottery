@@ -1,0 +1,29 @@
+class Potter{
+
+String potterName;
+String potterType;
+String madeUpOf;
+
+public void makingPottery(){
+System.out.println("The Potter is making pottery");
+}
+
+public void collecting(){
+System.out.println("The Potter is Collecting the pottery");
+}
+
+public static void main(String args[]){
+Potter p=new Potter();
+p.potterName="Michel myche";
+p.potterType = "Pottery designer";
+p.madeUpOf = "Mud";
+
+System.out.println("Pottery Name : "+p.potterName);
+System.out.println("Pottery Type : "+p.potterType);
+System.out.println("Made up of : "+p.madeUpOf);
+
+p.makingPottery();
+s.collecting();
+
+}
+}

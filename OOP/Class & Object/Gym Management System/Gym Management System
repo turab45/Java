@@ -1,0 +1,116 @@
+import java.util.Scanner;
+class GymManagementSystem{
+	Scanner s=new Scanner(System.in);
+	String name,roll,regMonth,regYear;
+	int fees;
+	public void gymMenu(){
+		System.out.println("  1. Register");
+		System.out.println("  2. Delete");
+		System.out.println("  3. Update");
+		System.out.println("  4. View ");
+		System.out.println("  5. Exit ");
+		//actionPerformed();
+	}
+	public void actionPerformed(int no){
+		if(no==1){
+			register();
+			
+		}
+		else if(no==2){
+			delete();
+			
+		}
+		else if(no==3){
+			update();
+			
+		}
+		else if(no==4){
+			view();
+			
+		}
+		else{
+			System.out.println("Choose Between 1-4");
+		}
+		
+	}
+	
+	// registeration method
+	public void register(){
+		System.out.print("        REGISTRATION\n");
+		System.out.print("Enter Name               : ");
+			name=s.next();
+		System.out.print("Enter Roll No            : ");
+			roll=s.next();
+		System.out.print("Enter Fees               : ");
+			fees=s.nextInt();
+		System.out.print("Enter Registration Month : ");
+			regMonth=s.next();
+		System.out.print("Enter Registration year  : ");
+			regYear=s.next();
+		System.out.println("\n                             REGISTER SUCCESSFULLY...");
+			//gymMenu();
+	}
+	
+	// Delete Method
+	public void delete(){
+		System.out.println("\n                DELETE INFORMATION ");
+		System.out.print("\nEnter Roll No         : ");
+		String roll1=s.next();
+		if(roll.equals(roll1)){
+			name=null;
+			roll=null;
+			fees=0;
+			regMonth=null;
+			regYear=null;
+			System.out.println("\n                             DELETE SUCCESSFULLY...");
+		}else
+		{
+			System.out.print("Roll No "+roll1+" Not Found!\nPlease Enter Correct Roll No: ");
+		}
+		
+	}
+	public void view(){
+		System.out.println("\n                              INFORMATION OF "+roll);
+		System.out.println("\n                                Name    : "+name);
+		System.out.println("                                Roll No : "+roll);
+		System.out.println("                                Fess Paid : "+fees);
+		System.out.println("                                Registration Month : "+regMonth);
+		System.out.println("                                Registration Year : "+regYear);
+	}
+	
+	public void update(){
+		System.out.println("\n                Update INFORMATION ");
+		System.out.print("\nEnter Roll No         : ");
+		String roll1=s.next();
+		if(roll.equals(roll1)){
+			System.out.print("Enter Name               : ");
+			name=s.next();
+		System.out.print("Enter Roll No            : ");
+			roll=s.next();
+		System.out.print("Enter Fees               : ");
+			fees=s.nextInt();
+		System.out.print("Enter Registration Month : ");
+			regMonth=s.next();
+		System.out.print("Enter Registration year  : ");
+			regYear=s.next();
+			System.out.println("\n                         SUCCESSFULLY UPDATED...");
+		}else
+		{
+			System.out.println("Roll No "+roll1+" Not Found!\nPlease Enter Correct Roll No.");
+		}
+	}
+	public static void main(String args[]){
+		System.out.println("\n<<<<<<<<<<< WELCOME TO GYM MANAGEMENT SYSTEM  >>>>>>>>>>>>\n\n");
+		Scanner s1=new Scanner(System.in);
+		
+		GymManagementSystem gym=new GymManagementSystem();
+	
+		int a;
+		do{
+			gym.gymMenu();
+			System.out.print("Choose b/w 1-5 : ");
+			a=s1.nextInt();
+			gym.actionPerformed(a);
+		}while(a!=0);
+	}
+}

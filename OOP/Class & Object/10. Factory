@@ -1,0 +1,32 @@
+class Factory{
+
+String name;
+String address;
+long netIncome;
+
+
+public void createProducts(){
+System.out.println("Creating new products");
+}
+
+public void sellProducts(){
+System.out.println("Selling  products");
+}
+
+public static void main(String args[]){
+Factory f=new Factory();
+
+f.name="Lalwani factory";
+f.address = "A54 Street road , San Francisco";
+f.netIncome = 1231230;
+
+
+System.out.println("Name : "+f.name);
+System.out.println("Address : "+f.address);
+System.out.println("Net Income : "+f.netIncome);
+
+f.createProducts();
+f.sellProducts();
+}
+
+}

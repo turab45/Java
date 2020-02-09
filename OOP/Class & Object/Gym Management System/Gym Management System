@@ -1,3 +1,10 @@
+// A mini project on Gym Management System
+// In this you can register a student after that you can view,update,delete the information of the candidate.
+// 
+
+
+
+
 import java.util.Scanner;
 class GymManagementSystem{
 	Scanner s=new Scanner(System.in);

@@ -1,7 +1,5 @@
-// A mini project on Gym Management System
-// In this you can register a student after that you can view,update,delete the information of the candidate.
-// 
-
+// Mini Project/task on Gym Management System
+//In this project user can register a students information and then can view, update, delete it.
 
 
 
@@ -10,6 +8,9 @@ class GymManagementSystem{
 	Scanner s=new Scanner(System.in);
 	String name,roll,regMonth,regYear;
 	int fees;
+  
+  //Menu method it will print the welcome lines on console then urges for input to select the operation.
+  
 	public void gymMenu(){
 		System.out.println("  1. Register");
 		System.out.println("  2. Delete");
@@ -18,30 +19,34 @@ class GymManagementSystem{
 		System.out.println("  5. Exit ");
 		//actionPerformed();
 	}
+  
+  // This method will perform the operation which user selects in main method after seeing the menu option.
+  
 	public void actionPerformed(int no){
 		if(no==1){
-			register();
+			register(); // if user selects 1 then it will go on registeration page and will require information.
 			
 		}
 		else if(no==2){
-			delete();
+			delete();   // if user selects 2 then it will go on delete page and user can delete the existing information of student/ client.
 			
 		}
 		else if(no==3){
-			update();
+			update();   // if user selects 3 then it will go on update page and user can update the existing information of student/ client.
 			
 		}
 		else if(no==4){
-			view();
+			view();     // if user selects 3 then it will go on view page and user can view the existing information of student/ client.
 			
 		}
 		else{
-			System.out.println("Choose Between 1-4");
+			System.out.println("Choose Between 1-4"); // if user enters other values than 1-5
 		}
 		
 	}
 	
 	// registeration method
+  
 	public void register(){
 		System.out.print("        REGISTRATION\n");
 		System.out.print("Enter Name               : ");
@@ -59,6 +64,7 @@ class GymManagementSystem{
 	}
 	
 	// Delete Method
+  
 	public void delete(){
 		System.out.println("\n                DELETE INFORMATION ");
 		System.out.print("\nEnter Roll No         : ");
@@ -85,6 +91,8 @@ class GymManagementSystem{
 		System.out.println("                                Registration Year : "+regYear);
 	}
 	
+  //update method
+  
 	public void update(){
 		System.out.println("\n                Update INFORMATION ");
 		System.out.print("\nEnter Roll No         : ");
@@ -118,6 +126,6 @@ class GymManagementSystem{
 			System.out.print("Choose b/w 1-5 : ");
 			a=s1.nextInt();
 			gym.actionPerformed(a);
-		}while(a!=0);
+		}while(a!=5);
 	}
 }

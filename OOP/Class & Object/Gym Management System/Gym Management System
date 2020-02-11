@@ -92,27 +92,69 @@ class GymManagementSystem{
 	}
 	
   //update method
+  // this method will update individually or all information.
   
 	public void update(){
 		System.out.println("\n                Update INFORMATION ");
 		System.out.print("\nEnter Roll No         : ");
 		String roll1=s.next();
 		if(roll.equals(roll1)){
+		System.out.println("  1. Name ");
+		System.out.println("  2. Roll No ");
+		System.out.println("  3. Fees ");
+		System.out.println("  4. Registration Month ");
+		System.out.println("  5. Registration Year ");
+		System.out.println("  6. Update All Information ");
+		int n=s.nextInt();
+		switch(n){
+			case 1:
 			System.out.print("Enter Name               : ");
 			name=s.next();
+			System.out.println("\n                        NAME UPDATED SUCCESSFULLY...");
+			break;
+			case 2:
 		System.out.print("Enter Roll No            : ");
 			roll=s.next();
+			System.out.println("\n                        ROLL NO UPDATED SUCCESSFULLY...");
+			break;
+			case 3:
 		System.out.print("Enter Fees               : ");
 			fees=s.nextInt();
+			System.out.println("\n                        FEES UPDATED SUCCESSFULLY...");
+			break;
+			case 4:
 		System.out.print("Enter Registration Month : ");
 			regMonth=s.next();
+			System.out.println("\n                        REGISTERATION MONTH UPDATED SUCCESSFULLY...");
+			break;
+			case 5:
 		System.out.print("Enter Registration year  : ");
 			regYear=s.next();
-			System.out.println("\n                         SUCCESSFULLY UPDATED...");
+			System.out.println("\n                        REGISTRATION YEAR UPDATED SUCCESSFULLY...");
+			break;
+			case 6:
+			System.out.print("Enter Name               : ");
+			name=s.next();
+			System.out.print("Enter Roll No            : ");
+			roll=s.next();
+			System.out.print("Enter Fees               : ");
+			fees=s.nextInt();
+			System.out.print("Enter Registration Month : ");
+			regMonth=s.next();
+			System.out.print("Enter Registration year  : ");
+			regYear=s.next();
+			
+		System.out.println("\n                         SUCCESSFULLY UPDATED...");
+		break;
+		default :{
+			System.out.println("Choose b/w 1-6");
+		}
+		}
 		}else
 		{
 			System.out.println("Roll No "+roll1+" Not Found!\nPlease Enter Correct Roll No.");
 		}
+	}
 	}
 	public static void main(String args[]){
 		System.out.println("\n<<<<<<<<<<< WELCOME TO GYM MANAGEMENT SYSTEM  >>>>>>>>>>>>\n\n");

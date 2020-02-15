@@ -1,0 +1,75 @@
+class Animal{
+
+String color;
+String name;
+String family;
+
+//defining the constructor which will take three arguments color,name and family.
+
+public Animal(String name,String family,String color){
+this.name=name;
+this.family=family;
+this.color=color;
+}
+
+public void isFine(boolean a){
+  if(a==true){
+  System.out.println("Animal is Fine");
+  }
+  else{
+  System.out.println("Animal is not fine");
+  }
+  
+  public void eat(){
+  System.out.println("Animal is eating");
+  }
+
+ public static void main(String args[]){
+ 
+//Creating the 1st object of Animal class and passing values in constructor.
+
+ Animal dog = new Animal("puppy","Brown","Bull dog family");
+
+ //calling the methods
+ 
+ dog.isFine(true);
+ dog.eat();
+ 
+ //printing all the information
+ 
+ System.out.println("Name : "+dog.name);
+  System.out.println("Color : "+dog.color);
+   System.out.println("Family : "+dog.family);
+   
+   //Creating the 2nd object of Animal class and passing values in constructor.
+
+ Animal Max = new Animal("Max","White","American dog family");
+
+ //calling the methods
+ 
+ Max.isFine(true);
+ Max.eat();
+ 
+ //printing all the information
+ 
+ System.out.println("Name : "+Max.name);
+  System.out.println("Color : "+Max.color);
+   System.out.println("Family : "+Max.family);
+   
+   //Creating the 3rd object of Animal class and passing values in constructor.
+
+ Animal fox = new Animal("Vulpes vulpes","Brown","Fox family");
+
+ //calling the methods
+ 
+ fox.isFine(true);
+ fox.eat();
+ 
+ //printing all the information
+ 
+ System.out.println("Name : "+fox.name);
+  System.out.println("Color : "+fox.color);
+   System.out.println("Family : "+fox.family);
+ } 
+}
+}

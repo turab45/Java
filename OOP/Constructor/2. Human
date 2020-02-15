@@ -1,0 +1,61 @@
+class Human{
+
+int height;
+String religion;
+String language;
+
+//defining the constructor
+public Human(int height,String religion,String language){
+this.height=height;
+this.religion=religion;
+this.language=language;
+}
+
+//defining the canWalk() method
+public void canWalk(){
+      System.out.println("Human can walk");
+}
+
+//defining the canSleep() method
+public void canSleep(){
+System.out.println("Human can sleep");
+}
+
+public static void main(String args[]){
+
+//creating the 1st object of human class and passing the values in constructor
+Human h1=new Human(6,"Islam","Urdu");
+
+
+h1.canWalk();
+h1.canSleep();
+
+System.out.println("Name : "+h1.name);
+System.out.println("Religion : "+h1.religion);
+System.out.println("Height : "+h1.height);
+
+//creating the 2nd object of human class and passing the values in constructor
+Human h2=new Human(7,"Christian","English");
+
+
+h2.canWalk();
+h2.canSleep();
+
+System.out.println("Name : "+h2.name);
+System.out.println("Religion : "+h2.religion);
+System.out.println("Height : "+h2.height);
+
+//creating the 3rd object of human class and passing the values in constructor
+Human h3=new Human(8,"Hindu","Hindi");
+
+
+h3.canWalk();
+h3.canSleep();
+
+System.out.println("Name : "+h3.name);
+System.out.println("Religion : "+h3.religion);
+System.out.println("Height : "+h3.height);
+
+}
+
+}

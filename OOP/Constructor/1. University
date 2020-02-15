@@ -1,0 +1,45 @@
+class University{
+int universityCertificateNo;
+String name;
+int ranking;
+
+public University(String name,int universityCertificateNo,int ranking){
+this.name=name;
+this.universityCertificateNo=universityCertificateNo;
+this.ranking=ranking;
+}
+public String status(boolean a){
+  if(a==true){
+  return "University is on";
+  }
+  else{
+  return "University is closed";
+  }
+}
+
+public static void main(String args[]){
+University mehran = new University("MUET Jamshoro",9000,15);
+
+System.out.println("University Name : "+mehran.name);
+System.out.println("University Certificate No : "+mehran.universityCertificateNo);
+System.out.println("University Ranking : "+mehran.ranking);
+System.out.println(mehran.status(true));
+
+University sindh = new University("Sindh University",8000,65);
+
+System.out.println("University Name : "+sindh.name);
+System.out.println("University Certificate No : "+sindh.universityCertificateNo);
+System.out.println("University Ranking : "+sindh.ranking);
+System.out.println(sindh.status(true));
+
+
+University iqra = new University("Iqra University",2000,12);
+
+System.out.println("University Name : "+iqra.name);
+System.out.println("University Certificate No : "+iqra.universityCertificateNo);
+System.out.println("University Ranking : "+iqra.ranking);
+System.out.println(iqra.status(true));
+
+}
+
+}

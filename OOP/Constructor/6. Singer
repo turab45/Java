@@ -1,0 +1,43 @@
+class Singer{
+
+String name;
+String type;
+String location;
+
+public Singer(String name,String location,String type){
+this.name=name;
+this.location=location;
+this.type=type;
+}
+public void singing(){
+System.out.println("The Singer is Singing right now");
+}
+
+public void doingPractice(){
+System.out.println("The Singer is practicing the song");
+}
+
+public static void main(String args[]){
+//creating the object of singer class.
+Singer s1=new Singer("Annile Malk","San Francisco, USA","pop star");
+
+System.out.println("Name : "+s1.name);
+System.out.println("Type : "+s1.type);
+System.out.println("Location : "+s1.location);
+
+s1.singing();
+s1.doingPractice();
+
+//creating the 2nd object of singer class.
+Singer s2=new Singer("Francisco byke","Paris","pop star");
+
+System.out.println("Name : "+s2.name);
+System.out.println("Type : "+s2.type);
+System.out.println("Location : "+s2.location);
+
+s2.singing();
+s2.doingPractice();
+
+
+}
+}

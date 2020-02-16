@@ -1,0 +1,45 @@
+class Employee{
+String name;
+int salary;
+static String companyName = "Xyz Enterprisers";
+public Employee(String name,int salary){
+this.name=name;
+this.salary=salary;
+}
+public int bonus(){
+bonus=bonus+1000;
+return bonus;
+}
+
+public void attendence(boolean a){
+
+  if(a==true){
+  System.out.prinltn("Present");
+  }
+  else{
+  System.out.println("Absent");
+  }
+}
+
+public static void main(String args[]){
+Employee e1 = new Employee("Robert",12000);
+
+System.out.println("Name : "+e1.name);
+System.out.println("Company Name : "+companyName);
+System.out.println("Salary : "+e1.salary);
+System.out.println("Salary after Bonus is "+e1.bonus());
+System.out.println("Employee Attendence : "+e1.attendence(true));
+
+Employee e2 = new Employee("Billy",13000);
+
+System.out.println("Name : "+e2.name);
+System.out.println("Company Name : "+companyName);
+System.out.println("Salary : "+e2.salary);
+System.out.println("Salary after Bonus is "+e2.bonus());
+System.out.println("Employee Attendence : "+e2.attendence(flase));
+
+
+}
+
+}
+© 2020 GitHub, Inc.

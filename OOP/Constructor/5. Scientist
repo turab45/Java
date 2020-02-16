@@ -1,0 +1,43 @@
+class Scientist{
+
+int age;
+String name;
+String type;
+
+public Scientist(String name,int age,String type){
+this.name=name;
+this.age=age;
+this.type=type;
+}
+public void thinking(){
+System.out.println("Scientist is thinking ");
+}
+
+public void doingExperiment(){
+System.out.println("Scientist is doing an experiment");
+}
+
+
+public static void main(String args[]){
+Scientist s1=new Scientist("Turab",35,"Data Scientist");
+
+
+System.out.println("Name : "+s1.name);
+System.out.println("Age : "+s1.age);
+System.out.println("Type : "+s1.type);
+
+s1.thinking();
+s1.doingExperiment();
+
+//creating the 2nd object
+Scientist s2=new Scientist("Albert",35,"Physics Scientist");
+
+
+System.out.println("Name : "+s2.name);
+System.out.println("Age : "+s2.age);
+System.out.println("Type : "+s2.type);
+
+s2.thinking();
+s2.doingExperiment();
+}
+}

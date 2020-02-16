@@ -1,0 +1,44 @@
+class Artist{
+
+String name;
+int age;
+String type;
+
+public Artist(String name,int age,String type){
+this.name=name;
+this.age=age;
+this.type=type;
+}
+
+public void doingWork(){
+System.out.println("The Artist is doing his work right now");
+}
+
+public void Sleeping(){
+System.out.println("The Artist is sleeping right now");
+}
+
+public static void main(String args[]){
+//creating the object of Artist class.
+Artist a1=new Artist("Albert Mycho",32,"Painter");
+
+
+System.out.println("Name : "+a1.name);
+System.out.println("Type : "+a1.type);
+
+a1.doingWork();
+a1.sleeping();
+
+//creating the 2nd object of Artist class.
+Artist a2=new Artist("Robert jean",36,"Painter");
+
+
+System.out.println("Name : "+a2.name);
+System.out.println("Type : "+a2.type);
+
+a2.doingWork();
+a2.sleeping();
+
+
+}
+}

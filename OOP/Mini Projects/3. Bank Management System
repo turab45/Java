@@ -1,0 +1,234 @@
+/*POJO:- POJO is a Java object not bound by any restriction other than those forced by the Java Language Specification.
+
+Properties of POJO
+
+1.All properties must public setter and getter methods
+2.All instance variables should be private
+3.Should not Extend prespecified classes.
+4.Should not Implement prespecified interfaces.
+5.Should not contain prespecified annotations.
+6.It may not have no argument constructor */
+
+
+
+import java.util.Scanner;
+
+class PojoClass{
+	//in pojo class all the fields should be private.
+	
+	//declaring the some private fiedls.
+	private String name;
+	private String accountNo;
+	private long balance;
+	
+	//creating the setters for private fields to access them outside this class as well.
+	//setName() method will return the name outside of the class.
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setAccountNo(String accountNo){
+		this.accountNo=accountNo;
+	}
+	public void setBalance(long balance){
+		this.balance=balance;
+	}
+	
+	
+	//creating the getters for private fields to access them outside this class as well.
+	//getName() method will return the name outside of the class.
+	
+	public String getName(){
+		return this.name;
+	} 
+	
+	//getAccountNo() method will return the accountNo outside of the class.
+	
+	public String getAccountNo(){
+		return this.accountNo;
+	}
+	
+	//getBalance() method will return the balance outside of the class.
+	
+	public long getBalance(){
+		return this.balance;
+	}
+}
+
+class Details{
+	Scanner s=new Scanner(System.in);
+	PojoClass pojo=new PojoClass();
+	
+	public void menu(){
+		System.out.println("\n\n1. Open New Account");
+		System.out.println("2. Check Balance");
+		System.out.println("3. Deposit ");
+		System.out.println("4. Withdraw");
+		System.out.println("5. Update ");
+		System.out.println("6. Delete ");
+		System.out.println("7. Show Account");
+		System.out.println("8. Exit\n");
+		
+		System.out.print("Choose 1-7  \n");
+		int choice=s.nextInt();
+		if(choice==1 || choice==2 || choice==3 || choice==4 || choice==5 || choice==6 || choice==7 || choice==8 ){
+			switch(choice){
+				case 1:
+				addAccount();
+				System.out.println("------------------------------- Account Created Succeccfully --------------------------\n");
+				break;
+				case 2:
+				checkBalance();
+				break;
+				case 3:
+				deposit();
+				break;
+				case 4:
+				withdraw();
+				break;
+				case 5:
+				update();
+				break;
+				case 6:
+				delete();
+				break;
+				case 7:
+				show();
+				break;
+				case 8:
+				System.out.println("\n------------------------------- GOOD BYE --------------------------\n");
+				System.exit(0);
+				break;
+			}
+		}else{
+			System.out.println("WRONG CHOICE....\n");
+			System.out.println("Please choose b/w 1-7");
+			menu();
+		}
+	}
+	
+	public void addAccount(){
+		System.out.println("\n------------------------------- NEW ACCOUNT --------------------------\n");
+		System.out.print("Enter Name       : ");
+		String name=s.next();
+		pojo.setName(name);
+		System.out.print("Enter Account No : ");
+		String accountNo=s.next();
+		pojo.setAccountNo(accountNo);
+		System.out.print("Enter Balance    : ");
+		long balance=s.nextLong();
+		pojo.setBalance(balance);
+		System.out.println("\n------------------------------- ACCOUNT CREATED SUCCESSFULLY... --------------------------\n");
+		
+		menu();
+		}
+		
+		public void checkBalance(){
+		System.out.println("\n------------------------------- CHECK BALANCE --------------------------\n");
+		System.out.print("\nEnter Account No ");
+		String accountNo=s.next();
+		if(pojo.getAccountNo().equals(accountNo)){
+			System.out.println("Current Balance : "+pojo.getBalance());
+			menu();
+		}else{
+			System.out.println(accountNo+" Not Found!");
+			menu();
+		}
+		}
+		
+		public void withdraw(){
+			long balance=pojo.getBalance();
+			System.out.println("\n------------------------------- WITHDRAW --------------------------\n");
+		System.out.print("Enter Account No ");
+		String accountNo=s.next();
+		if(pojo.getAccountNo().equals(accountNo)){
+			System.out.print("\nEnter Amount to withdraw ");
+			int amount=s.nextInt();
+			if(amount>balance){
+				System.out.println("Insufficient Balance...");
+				menu();
+			}else{
+				
+				balance=balance-amount;
+				pojo.setBalance(balance);
+				System.out.println("\n----------------------- WITHDRAW SUCCESSFULLY... --------------------------\n");
+				menu();
+			}
+		}else{
+			System.out.println(accountNo+" Not Found!");
+			menu();
+		}
+		}
+		
+		public void deposit(){
+			long balance=pojo.getBalance();
+			System.out.println("\n------------------------------- DEPOSIT --------------------------\n");
+		System.out.print("Enter Account No ");
+		String accountNo=s.next();
+		if(pojo.getAccountNo().equals(accountNo)){
+			System.out.print("\nEnter Amount to deposit ");
+			int amount=s.nextInt();
+			if(amount>0){
+				balance+=amount;
+				pojo.setBalance(balance);
+				menu();
+			}else{
+				System.out.println("Invalid Amount");
+				menu();
+			}
+		}
+		else{
+			System.out.println(accountNo+" Not Found!");
+			menu();
+		}
+		}
+	public void update(){
+		System.out.println("\n------------------------------- UPDATE ACCOUNT--------------------------\n");
+		System.out.print("Enter Account No ");
+		String accountNo=s.next();
+		if(pojo.getAccountNo().equals(accountNo)){
+			addAccount();
+			System.out.println("\n------------------------------- UPDATED SUCCESSFULLY... --------------------------\n");
+			menu();
+		}else{
+			System.out.println(accountNo+" Not Found!");
+			menu();}
+	}
+	public void delete(){
+		System.out.println("\n------------------------------- DELETE ACCOUNT --------------------------\n");
+		System.out.print("Enter Account No ");
+		String accountNo=s.next();
+		if(pojo.getAccountNo().equals(accountNo)){
+			pojo.setName("");
+			pojo.setAccountNo("");
+			pojo.setBalance(0);
+			System.out.println("\n------------------------------- DELETED SUCCESSFULLY... --------------------------\n");
+			menu();
+		}else{
+			System.out.println(accountNo+" Not Found!");
+			menu();}
+	}
+	public void show(){
+		System.out.println("\n------------------------------- ACCOUNT INFORMATION --------------------------\n");
+		System.out.print("Enter Account No ");
+		String accountNo=s.next();
+		if(pojo.getAccountNo().equals(accountNo)){
+			System.out.println("Name            : "+pojo.getName());
+			System.out.println("Account No      : "+pojo.getAccountNo());
+			System.out.println("Current Balance : "+pojo.getBalance());
+			
+			
+			menu();
+		}else{
+			System.out.println(accountNo+" Not Found!");
+			menu();}
+	}
+}
+
+class BankManagementSystem{
+	public static void main(String args[]){
+		Details s=new Details();
+		System.out.println("------------------------------- WELCOME TO --------------------------");
+		System.out.println("------------------------ BANK MANAGEMENT SYSTEM ---------------------");
+		s.menu();
+	}
+}

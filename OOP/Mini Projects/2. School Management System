@@ -1,0 +1,212 @@
+//school management system
+//in this we have used the concept of pojo class
+/*POJO:- POJO is a Java object not bound by any restriction other than those forced by the Java Language Specification.
+
+Properties of POJO
+
+1.All properties must public setter and getter methods
+2.All instance variables should be private
+3.Should not Extend prespecified classes.
+4.Should not Implement prespecified interfaces.
+5.Should not contain prespecified annotations.
+6.It may not have no argument constructor */
+
+
+import java.util.Scanner;
+class PojoForSchool{
+	//in pojo class all the fields should be private.
+	
+	//declaring the some private fiedls.
+	private String name;
+	private String fatherName;
+	private String studentClass;
+	private String rollNo;
+	private int age;
+	
+	//creating setters for the private fields to access them in other classes as well.
+	//setName method will require a string parameter and then it will assign the user's name to the private field name
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	//setFatherName method will require a string parameter and then it will assign the user's fatherName to the private field FatherName
+	public void setFatherName(String fatherName){
+		this.fatherName=fatherName;
+	}
+	
+	//setRoll method will require a string parameter and then it will assign the user's rollNo to the private field rollNo
+	public void setRollNo(String rollNo){
+		this.rollNo=rollNo;
+	}
+	
+	//setName method will require a integer parameter and then it will assign the user's age to the private field age
+	public void setAge(int age){
+		this.age=age;
+	}
+	public void setStudentClass(String studentClass){
+		this.studentClass=studentClass;
+	}
+	
+	//creating the getters for private fields to access them outside this class as well.
+	//getName() method will return the name outside of the class.
+	public String getName(){
+		return this.name;
+	}
+	
+	//getFatherName() method will return the fatherName outside of the class.
+	public String getFatherName(){
+		return this.fatherName;
+	}
+	//getRollNo() method will return the rollNo outside of the class.
+	public String getRollNo(){
+		return this.rollNo;
+	}
+	
+	//getAge() method will return the age outside of the class.
+	public int getAge(){
+		return this.age;
+	}
+	
+	public String getStudentClass(){
+		return this.studentClass;
+	}
+}
+class StudentDetails{
+	//in this class well create some methods to assign the values to the private fields.
+	//creating the object to access the getters and setters to assign the values.
+	Scanner s=new Scanner(System.in);
+	
+		//creating the object of pojo class b/c we have to pass some information to the private fields thorough getters & setters.
+	PojoForSchool pojo=new PojoForSchool();
+		//menu() method will everytime show user what operations you can perform
+	public void menu(){
+		
+		System.out.println("\n\n1.Register");
+		System.out.println("2.View");
+		System.out.println("3.Update");
+		System.out.println("4.Delete");
+		System.out.println("5.Exit\n");
+		
+		System.out.println("Enter 1-5");
+		int choice=s.nextInt();
+			//if choice is between 1 to 5 then it will execute the if statement otherwise it will jump to else statement
+		if(choice==1 || choice==2 || choice==3 || choice==4 || choice==5){
+			switch(choice){
+			case 1:
+			System.out.println("----------- STUDENT REGISTERATION PORTAL -----------\n");
+			register();
+			System.out.println("\n\n--------------STUDENT REGISTERED SUCCESSFULLY...-------------------");
+			menu();
+			break;
+			case 2:
+			view();
+			break;
+			case 3:
+			update();
+			System.out.println("\n\n------------ STUDENT INFORMATION UPDATED SUCCESSFULLY... ---------------");
+			menu();
+			break;
+			case 4:
+			System.out.println("\n\n--------------STUDENT INFORMATION DELETED SUCCESSFULLY...-------------------");
+			delete();
+			break;
+			case 5:
+			System.out.println("--------------------- GOOD BYE -------------------------------");
+			break;
+			}
+		}else{	//in case of any wrong choice the else statement will be executed.
+			
+			System.out.println("Please Enter b/w 1-5");
+			menu();
+		}
+	}
+	
+	//register() method will require some info to add the data of a new student
+	public void register(){
+	
+		System.out.print("Enter Name        :  ");
+		String name=s.next();
+		pojo.setName(name);
+		System.out.print("Enter Father Name :  ");
+		String fatherName=s.next();
+		pojo.setFatherName(fatherName);
+		System.out.print("Enter Roll NO     :  ");
+		String rollNo=s.next();
+		System.out.print("Enter Class       :  ");
+		String studentClass=s.next();
+		pojo.setStudentClass(studentClass);
+		pojo.setRollNo(rollNo);
+		System.out.print("Enter Age         :  ");
+		int age=s.nextInt();
+		pojo.setAge(age);
+		
+		
+		
+	}
+	
+	//view() method will show what information we have of a particular student.
+	//it will show the info on based upon roll number
+	public void view(){
+		System.out.println("----------- VIEW STUDENT DETAILS -----------\n");
+		System.out.print("Enter Roll NO     :  ");
+		String roll=s.next();
+		if(pojo.getRollNo().equals(roll)){
+			System.out.println("\n------------------  STUDENT DETAILS  -----------------\n");
+			System.out.println("			Name        : "+pojo.getName());
+			System.out.println("			Father Name : "+pojo.getFatherName());
+			System.out.println("			Class       : "+pojo.getStudentClass());
+			System.out.println("			Roll No     : "+pojo.getRollNo());
+			System.out.println("			Age         : "+pojo.getAge());
+			
+			menu();
+			}else{
+			System.out.print("---------------------------------  Roll No: "+roll+" not found! ---------------------------");
+			menu();
+		}
+		}
+			
+			//update() method will update the information of existing student.
+		public void update(){
+			System.out.println("----------- UPDATE STUDENT DETAILS -----------\n");
+		System.out.print("Enter Roll NO     :  ");
+		String roll=s.next();
+		if(pojo.getRollNo().equals(roll)){
+			System.out.println("---------- New Details -----------");
+			register();
+			
+		}else{
+			System.out.print("---------------------------------  Roll No: "+roll+" not found! ---------------------------");
+			menu();}
+		}
+		
+		//delete() method will delete all the info of existing student.
+	public void delete(){
+		System.out.println("----------- DELETE STUDENT DETAILS -----------\n");
+		System.out.print("Enter Roll NO     :  ");
+		String roll=s.next();
+		if(pojo.getRollNo().equals(roll)){
+			pojo.setName(null);
+			pojo.setFatherName(null);
+			pojo.setStudentClass(null);
+			pojo.setRollNo(null);
+			pojo.setAge(0);
+			
+			menu();
+		}else{
+			System.out.print("---------------------------------  Roll No: "+roll+" not found! ---------------------------");
+			menu();
+		}
+	}
+	
+}
+class SchoolManagementSystem{
+	public static void main(String args[]){
+		
+		//creating the object of StudentDetails class
+	StudentDetails s1=new StudentDetails();
+	//Welcome screen of our project that will include this and all information present in menu() method.
+	System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<      WELCOME TO   >>>>>>>>>>>>>>>>>>>>>>>>\n");
+	System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<   HIGH LEVEL SCHOOL   >>>>>>>>>>>>>>>>>>>>>>>>\n");
+	s1.menu();
+}
+}

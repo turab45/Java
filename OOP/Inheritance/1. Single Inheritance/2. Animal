@@ -1,0 +1,72 @@
+class Animal{
+	String name;
+	int age;
+	String color;
+	
+	public void eat(){
+		System.out.println("Eating ");
+	}
+	
+	public void sleep(){
+		System.out.println("Sleeping ");
+	}
+}
+
+class Dog extends Animal{
+	int legs;
+	public void bark(){
+		System.out.println("Barking ");
+	}
+}
+
+class Task1{
+	public static void main(String args[]){
+	Dog d1=new Dog();
+	d1.name="Dog 1";
+	d1.age=6;
+	d1.color="Black";
+	d1.legs=4;
+	
+	System.out.println(d1.name);
+	System.out.println(d1.age);
+	System.out.println(d1.color);
+	System.out.println(d1.legs);
+	
+	d1.bark();
+	d1.eat();
+	d1.sleep();
+	System.out.println();
+	
+	Dog d2=new Dog();
+	d2.name="Dog 2";
+	d2.age=5;
+	d2.color="Black & white";
+	d2.legs=4;
+	
+	System.out.println(d2.name);
+	System.out.println(d2.age);
+	System.out.println(d2.color);
+	System.out.println(d2.legs);
+	
+	d2.bark();
+	d2.eat();
+	d2.sleep();
+	System.out.println();
+  
+	Dog d3=new Dog();
+	d3.name="Dog 3";
+	d3.age=6;
+	d3.color="white";
+	d3.legs=4;
+	
+	System.out.println(d3.name);
+	System.out.println(d3.age);
+	System.out.println(d3.color);
+	System.out.println(d3.legs);
+	
+	d3.bark();
+	d3.eat();
+	d3.sleep();
+	System.out.println();
+}
+}

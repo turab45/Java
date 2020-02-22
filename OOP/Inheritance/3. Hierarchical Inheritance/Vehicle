@@ -1,0 +1,137 @@
+class Vehicle{
+	String name;
+	int tyres;
+	int price;
+	
+	public void start(){
+		System.out.println("Engine in on");
+	}
+	
+	public void move(){
+		System.out.println("Moving");
+	}
+}
+
+class Car extends Vehicle{
+	String model;
+	String color;
+	
+	public void fillPetrol(){
+		System.out.println("Filling petrol");
+	}
+}
+class Audi extends Car{
+	String companyName;
+	
+	public void stop(){
+		System.out.println("Stoped");
+	}
+}
+
+
+class Bike extends Vehicle{
+	String name;
+	int tyres;
+	int price;
+	
+	public void start(){
+		System.out.println("Engine in on");
+	}
+	
+	public void move(){
+		System.out.println("Moving");
+	}
+}
+
+class Honda extends Bike{
+	String model;
+	String color;
+	
+	public void fillPetrol(){
+		System.out.println("Filling petrol");
+	}
+	String companyName;
+	
+	public void stop(){
+		System.out.println("Stoped");
+	}
+}
+class CD extends Bike{
+	String model;
+	String color;
+	
+	public void fillPetrol(){
+		System.out.println("Filling petrol");
+	}
+	String companyName;
+	
+	public void stop(){
+		System.out.println("Stoped");
+	}
+}
+
+class Task3{
+	public static void main(String args[]){
+	//creating the object of Audi class	
+	Audi audi1=new Audi();
+	audi1.name="Audi 759VX";
+	audi1.tyres=4;
+	audi1.price=1231204;
+	audi1.model="759vx";
+	audi1.color="Red";
+	audi1.companyName="Audi Company";
+	
+	System.out.println(audi1.name);
+	System.out.println(audi1.tyres);
+	System.out.println(audi1.price);
+	System.out.println(audi1.model);
+	System.out.println(audi1.color);
+	System.out.println(audi1.companyName);
+	audi1.start();
+	audi1.move();
+	audi1.fillPetrol();
+	audi1.stop();
+	System.out.println();
+	
+	//creating the object of Honda class
+	Honda h1=new Honda();
+	h1.name="Honda 123";
+	h1.tyres=2;
+	h1.price=40000;
+	h1.model="2020";
+	h1.color="Red";
+	h1.companyName="Honda Company";
+	
+	System.out.println(h1.name);
+	System.out.println(h1.tyres);
+	System.out.println(h1.price);
+	System.out.println(h1.model);
+	System.out.println(h1.color);
+	System.out.println(h1.companyName);
+	h1.start();
+	h1.move();
+	h1.fillPetrol();
+	h1.stop();
+	System.out.println();
+	
+	//creating the object of CD class
+	CD cd=new CD();
+	cd.name="CD 70";
+	cd.tyres=2;
+	cd.price=45000;
+	cd.model="2020";
+	cd.color="Red";
+	cd.companyName="CD Company";
+	
+	System.out.println(cd.name);
+	System.out.println(cd.tyres);
+	System.out.println(cd.price);
+	System.out.println(cd.model);
+	System.out.println(cd.color);
+	System.out.println(cd.companyName);
+	cd.start();
+	cd.move();
+	cd.fillPetrol();
+	cd.stop();
+	}
+}

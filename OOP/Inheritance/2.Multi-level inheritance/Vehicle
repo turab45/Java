@@ -1,0 +1,91 @@
+class Vehicle{
+	String name;
+	int tyres;
+	int price;
+	
+	public void start(){
+		System.out.println("Engine in on");
+	}
+	
+	public void move(){
+		System.out.println("Moving");
+	}
+}
+
+class Car extends Vehicle{
+	String model;
+	String color;
+	
+	public void fillPetrol(){
+		System.out.println("Filling petrol");
+	}
+}
+
+class Audi extends Car{
+	String companyName;
+	
+	public void stop(){
+		System.out.println("Stoped");
+	}
+}
+
+class Task2{
+	public static void main(String args[]){
+	Audi audi1=new Audi();
+	audi1.name="Audi 759VX";
+	audi1.tyres=4;
+	audi1.price=1231204;
+	audi1.model="759vx";
+	audi1.color="Red";
+	audi1.companyName="Audi Company";
+	
+	System.out.println(audi1.name);
+	System.out.println(audi1.tyres);
+	System.out.println(audi1.price);
+	System.out.println(audi1.model);
+	System.out.println(audi1.color);
+	System.out.println(audi1.companyName);
+	audi1.start();
+	audi1.move();
+	audi1.fillPetrol();
+	audi1.stop();
+	
+	Audi audi2=new Audi();
+	audi2.name="Audi 959VX";
+	audi2.tyres=4;
+	audi2.price=12143144;
+	audi2.model="959vx";
+	audi2.color="Blue";
+	audi2.companyName="Audi Company";
+	
+	System.out.println(audi2.name);
+	System.out.println(audi2.tyres);
+	System.out.println(audi2.price);
+	System.out.println(audi2.model);
+	System.out.println(audi2.color);
+	System.out.println(audi2.companyName);
+	audi2.start();
+	audi2.move();
+	audi2.fillPetrol();
+	audi2.stop();
+	
+	Audi audi3=new Audi();
+	audi3.name="Audi 387VX";
+	audi3.tyres=4;
+	audi3.price=1231204;
+	audi3.model="387vx";
+	audi3.color="White";
+	audi3.companyName="Audi Company";
+	
+	System.out.println(audi3.name);
+	System.out.println(audi3.tyres);
+	System.out.println(audi3.price);
+	System.out.println(audi3.model);
+	System.out.println(audi3.color);
+	System.out.println(audi3.companyName);
+	audi3.start();
+	audi3.move();
+	audi3.fillPetrol();
+	audi3.stop();
+	}
+}

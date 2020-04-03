@@ -1,5 +1,3 @@
-
-
 import java.util.*;
 
 /**
@@ -7,9 +5,6 @@ import java.util.*;
  * @author Turab Bajeer
  */
 public class Student {
-	public Student(){
-		Department department = new Department();
-	}
 
     List students = new ArrayList();
     List rollNumbers = new ArrayList();
@@ -74,12 +69,22 @@ public class Student {
     }
 
     public List printStudents() {
+       if(students.isEmpty())
+           return null;
        
         return students;
     }
     
     public List printRollNumbers(){
+        if(rollNumbers.isEmpty())
+            return null;
+        
     return rollNumbers;
+    }
+    
+    public int indexOfStudent(String rollNumber){
+    int index = rollNumbers.indexOf(rollNumber);
+    return index;
     }
 	
 }

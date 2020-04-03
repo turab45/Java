@@ -37,6 +37,14 @@ public class Department {
             return false;
         }
     }
+    public void deleteDepartment(int index) {
+        
+        
+        
+            departments.remove(index);
+            codes.remove(index);
+            
+    }
     
     public boolean updateDepartment(String departmentCode, String newName, String newCode){
         

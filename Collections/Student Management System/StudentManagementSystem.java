@@ -8,14 +8,17 @@ import java.util.Scanner;
  * @author Turab Bajeer
  */
 public class StudentManagementSystem {
-	
-    Student students = new Student();
-	Department departments = new Department();
+
+    Student students;
+    Department departments;
+
+    public StudentManagementSystem() {
+        students = new Student();
+        departments = new Department();
+    }
+
     public Scanner scanner = new Scanner(System.in);
-    
-	
-	static String deptCode = "";
-    
+    static String deptCode = "";
 
     public void addStudent() {
         System.out.print("Enter Student Name : ");
@@ -56,9 +59,9 @@ public class StudentManagementSystem {
     public void deleteStudent() {
         System.out.print("Enter Student Roll No to Delete : ");
         String rollNumber = scanner.next();
-		String deleted = rollNumber;
+        departments.deleteDepartment(students.indexOfStudent(rollNumber));
         if (students.deleteStudent(rollNumber)) {
-            System.out.println(deleted+ " Deleted Successfully.");
+            System.out.println(students.getStudent(rollNumber) + " Deleted Successfully.");
         } else {
             System.out.println("Roll No : " + rollNumber + " Not found.");
         }
@@ -69,7 +72,7 @@ public class StudentManagementSystem {
         System.out.print("Enter Roll No  to get Student : ");
         String rollNumber = scanner.next();
 
-        if (students.getStudent(rollNumber).equalsIgnoreCase(null)) {
+        if (students.getStudent(rollNumber).equals(null)) {
             System.out.println("Roll No : " + rollNumber + " Not found.");
         } else {
             System.out.println("========================================");
@@ -81,25 +84,28 @@ public class StudentManagementSystem {
     }
 
     public void getAllStudents() {
-        Iterator i1,i2,i3,i4;
-         i1 = students.printStudents().iterator();
-         i2 = students.printRollNumbers().iterator();
-         i3 = departments.getAllDepartments().iterator();
-         i4 = departments.getAllDepartmentCodes().iterator();
-         
-		 System.out.println("========================================");
-         System.out.println(String.format("%s %s %s %s", "Name ", "Roll No ", "Department", "Code"));
-         while(i1.hasNext() && i2.hasNext() || (i3.hasNext() && i4.hasNext())){
-         System.out.println(String.format("%s  %s  %s  %s",i1.next(),i2.next(),i3.next(),i4.next()));
-         }System.out.println("========================================");
-		 
+        Iterator i1, i2, i3, i4;
+        i1 = students.printStudents().iterator();
+        i2 = students.printRollNumbers().iterator();
+        i3 = departments.getAllDepartments().iterator();
+        i4 = departments.getAllDepartmentCodes().iterator();
 
+        System.out.println(String.format("%s %s %s %s", "Name ", "Roll No ", "Department", "Code"));
+        while (i1.hasNext() && i2.hasNext() || (i3.hasNext() && i4.hasNext())) {
+            System.out.println(String.format("%s  %s  %s  %s", i1.next(), i2.next(), i3.next(), i4.next()));
+        }
+
+        /*System.out.println("========================================");
+         System.out.println(String.format("%s %s %s %s", "Name ", "Roll No ", "Department", "Code"));
         
+         students.printStudents();
+         //  departments.printDepartments();
+         System.out.println("========================================");*/
     }
 
     public void menu() {
         int choice;
-		System.out.println("\n *** WELCOME TO STUDENT DEPARTMENT MANAGEMENT SYSTEM *** \n");
+
         System.out.println("1. Manage Departments");
         System.out.println("2. Manage Students");
         System.out.println("3. Exit");
@@ -198,7 +204,7 @@ public class StudentManagementSystem {
 
         String departmentCode = scanner.next();
 
-        if (departments.getDepartment(departmentCode).equalsIgnoreCase(null)) {
+        if (departments.getDepartment(departmentCode).equals(null)) {
             System.out.println("Department Code " + departmentCode + " Not found.");
         } else {
             System.out.println("Enter New Name of Department ");
@@ -220,7 +226,7 @@ public class StudentManagementSystem {
             System.out.println("Department Not Found.");
         } else {
             System.out.println("========================================");
-            System.out.println(String.format("%s  %s", "Name ", "Code"));
+            System.out.println(String.format("%s %s", "Name ", "Roll No "));
             System.out.println();
             System.out.println(departments.getDepartment(departmentCode));
             System.out.println("========================================");

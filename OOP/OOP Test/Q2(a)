@@ -1,0 +1,36 @@
+public class Movie {
+    String title,releaseYear;
+    double budget,revenue;
+
+    public Movie(String title, String releaseYear, double budget) {
+        this.title = title;
+        this.releaseYear = releaseYear;
+        this.budget = budget;
+
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void addRevenue(double currentRevenue) {
+        this.revenue = currentRevenue;
+    }
+
+    public double calcProfit(){
+        double profit = this.revenue - this.budget;
+        return profit;
+    }
+
+    public String getReleaseYear() {
+        return releaseYear;
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+
+    public double getRevenue() {
+        return revenue;
+    }
+}

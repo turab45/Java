@@ -1,0 +1,46 @@
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class Main {
+    public int[] createFibonacci(int size) {
+
+        int[] fibonacci = new int[size];
+        //initialized first element to 0
+        fibonacci[0] = 0;
+        //initialized second element to 1
+        fibonacci[1] = 1;
+
+        //New number should be the sum of the last two numbers of the series.
+        for (int i = 2; i < size; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+
+        return fibonacci;
+    }
+
+public void writeToFile(String fileName, int[] fibonacci){
+        try{
+                FileWriter fw=new FileWriter("C:\\Users\\Turab Bajeer\\Desktop\\"+fileName+".txt");
+                for(int i=0;i<fibonacci.length;i++){
+                    fw.write(fibonacci[i]+" ");
+                }
+                fw.close();
+            }catch(Exception e){System.out.println(e);}
+            System.out.println("Successfully saved to file Fib.txt");
+        }
+
+
+
+
+
+    public static void main(String args[]){
+        Main main = new Main();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of fibonacci series: ");
+        int size = scanner.nextInt();
+        int[] fibonacci = main.createFibonacci(size);
+        System.out.println("Fibonacci series of "+size+" elements created.");
+        main.writeToFile("Fib", fibonacci);
+
+    }
+}

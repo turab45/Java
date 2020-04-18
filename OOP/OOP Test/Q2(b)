@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class CompareProfits {
+
+public static void compare(Movie m1, Movie m2){
+    if(m1.calcProfit() > m2.calcProfit()){
+        System.out.println(m1.getTitle()+" has more profit than "+m2.getTitle());
+    }
+    else if(m2.calcProfit() > m1.calcProfit()){
+        System.out.println(m2.getTitle()+" has more profit than "+m1.getTitle());
+    }
+
+}
+
+
+public static void main(String args[]){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("\n ---- Movie 2 ----");
+    System.out.print("Enter Movie Name: ");
+    String movieName1 = scanner.next();
+    System.out.print("Enter Movie Release Year: ");
+    String releaseYear1 = scanner.next();
+    System.out.print("Enter Movie Budget: ");
+    double budget1 = scanner.nextDouble();
+
+    System.out.print("Enter Movie Revenue: ");
+    double revenue1 = scanner.nextDouble();
+    System.out.println("\n ---- Movie 2 ----");
+    System.out.print("Enter Movie Name: ");
+    String movieName2 = scanner.next();
+    System.out.print("Enter Movie Release Year: ");
+    String releaseYear2 = scanner.next();
+    System.out.print("Enter Movie Budget: ");
+    double budget2 = scanner.nextDouble();
+
+    System.out.print("Enter Movie Revenue: ");
+    double revenue2 = scanner.nextDouble();
+    Movie m1 = new Movie(movieName1,releaseYear1,budget1);
+    Movie m2 = new Movie(movieName2,releaseYear2,budget2);
+    m1.addRevenue(revenue1);
+    m2.addRevenue(revenue2);
+
+
+    System.out.println("------- Profit Comparasion -----");
+
+    compare(m1,m2);
+
+    System.out.println("avengers profit = "+m1.calcProfit());
+    System.out.println("Thor profit = "+m2.calcProfit());
+
+    System.out.println("----------------------------------");
+
+
+}
+}

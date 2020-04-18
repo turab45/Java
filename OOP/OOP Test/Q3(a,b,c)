@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Calculator {
+    public static double result;
+
+    public static void add(double number1, double number2){
+        result +=  (number1 + number2);
+    }
+    public static void sub(double number1, double number2){
+        result +=  (number1 - number2);
+    }
+    public static void mul(double number1, double number2){
+
+            result +=  (number1 * number2);
+
+    }
+    public static void div(double number1, double number2){
+        if(number2 <=0){
+            result +=  number1 / 1;
+
+        }else {
+            result +=  (number1 / number2);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Enter Number 1: ");
+        double number1 = scanner.nextDouble();
+        System.out.print("Enter Number 2: ");
+        double number2 = scanner.nextDouble();
+
+        Calculator.add(number1,number2);
+        Calculator.sub(number1,number2);
+        Calculator.div(number1,number2);
+        Calculator.mul(number1,number2);
+
+        System.out.println("Average = "+(result/4));
+    }
+}

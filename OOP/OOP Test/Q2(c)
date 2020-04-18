@@ -1,0 +1,77 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.*;
+
+public class ExtraCredit {
+    static ArrayList<Movie> movies = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void addMovie(){
+        System.out.print("Enter Movie Name: ");
+        String movieName = scanner.next();
+        System.out.print("Enter Movie Release Year: ");
+        String movieReleaseYear = scanner.next();
+        System.out.print("Enter Movie Budget: ");
+        double movieBudget = scanner.nextDouble();
+        System.out.print("Add current revenue: ");
+        double currentRevenue = scanner.nextDouble();
+       Movie m = new Movie(movieName,movieReleaseYear,movieBudget);
+        movies.add(m);
+        m.addRevenue(currentRevenue);
+    }
+
+
+
+    public void details(){
+
+        ArrayList<Integer> profits = new ArrayList<>();
+
+        int indexOfMin, indexOfMax;
+
+        for(int i=0; i<movies.size(); i++){
+            Movie m = movies.get(i);
+            profits.add((int) m.calcProfit());
+        }
+
+        int max = Collections.max(profits);
+        int min = Collections.min(profits);
+
+
+        indexOfMin = profits.indexOf(min);
+        indexOfMax = profits.indexOf(max);
+
+        System.out.println("Maximum profit by\nName: "+movies.get(indexOfMax).getTitle()+"\n" +
+                "Release Year: "+movies.get(indexOfMax).getReleaseYear()+
+                "\nBudget: "+movies.get(indexOfMax).getBudget()+
+                "\nCurrent Revenue: "+movies.get(indexOfMax).getRevenue()
+                +"\nprofit = "+movies.get(indexOfMax).calcProfit());
+
+        System.out.println("Minimum profit by\nName: "+movies.get(indexOfMin).getTitle()+"\n" +
+                "Release Year: "+movies.get(indexOfMin).getReleaseYear()+
+                "\nBudget: "+movies.get(indexOfMin).getBudget()+
+                "\nCurrent Revenue: "+movies.get(indexOfMin).getRevenue() );
+                    if(movies.get(indexOfMin).calcProfit() > 0){
+                        System.out.println("Profit: "+movies.get(indexOfMin).calcProfit());
+                    }
+                    else System.out.println("Loss: " + movies.get(indexOfMin).calcProfit());
+
+        }
+
+
+    public static void main(String[] args) {
+
+        ExtraCredit e = new ExtraCredit();
+
+        System.out.println("How many Movies you want to enter?: ");
+        int limit = scanner.nextInt();
+        int i=0;
+        while (i < limit){
+            System.out.println("Movie No: "+(i+1));
+            e.addMovie();
+            i++;
+        }
+        System.out.println("-----------------------------");
+        e.details();
+        System.out.println("-----------------------------");
+    }
+}
